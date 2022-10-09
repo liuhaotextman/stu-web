@@ -1,0 +1,23 @@
+{
+    "name": "snow/stu_web",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Snow\\StuWeb\\": "src/",
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "liuhao"
+        }
+    ],
+    "require": {
+        "psr/container": "^1.1.1|^2.0.1",
+        "ext-json": "*",
+        "ext-redis": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}

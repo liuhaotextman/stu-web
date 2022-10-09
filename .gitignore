@@ -1,0 +1,9 @@
+/.idea
+/.vscode
+/vendor
+/env
+*.log
+Test.*
+.env
+*.bak
+*.test
