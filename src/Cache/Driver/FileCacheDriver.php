@@ -10,11 +10,12 @@ class FileCacheDriver implements CacheDriverInterface
 
     protected Filesystem $filesystem;
 
-    protected string $cachePath = '/var/www/html/stu_web/runtime/';
+    protected string $cachePath = '';
 
     public function __construct(Filesystem $filesystem)
     {
         $this->filesystem = $filesystem;
+        $this->cachePath = BASE_PATH . DIRECTORY_SEPARATOR . 'runtime' . DIRECTORY_SEPARATOR;
     }
 
     protected function getKeyFileName(string $key)
