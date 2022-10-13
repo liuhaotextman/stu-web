@@ -1,6 +1,6 @@
 <?php
 
-namespace Snow\StuWeb\App\Components;
+namespace App\Components;
 
 class Request extends \Snow\StuWeb\Http\Request
 {

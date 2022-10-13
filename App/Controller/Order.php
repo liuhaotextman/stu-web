@@ -1,6 +1,6 @@
 <?php
 
-namespace Snow\StuWeb\App\Controller;
+namespace App\Controller;
 
 use Snow\StuWeb\Contracts\Http\RequestInterface;
 use Snow\StuWeb\Support\Facades\Cache;

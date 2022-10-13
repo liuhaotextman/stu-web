@@ -39,7 +39,7 @@ class App extends Container
     public function __construct(string $appPath = '')
     {
         if (!$appPath) {
-            $appPath = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'App';
+            $appPath = BASE_PATH . DIRECTORY_SEPARATOR . 'App';
         }
         $this->appPath = $appPath;
         $this->routePath = $appPath . DIRECTORY_SEPARATOR . 'Route';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Snow\StuWeb\App\Middlewares;
+namespace App\Middlewares;
 
 use Closure;
 use Snow\StuWeb\Contracts\Http\ResponseInterface;

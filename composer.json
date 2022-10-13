@@ -3,6 +3,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
+            "App\\": "App",
             "Snow\\StuWeb\\": "src/",
             "Tests\\": "tests/"
         }
