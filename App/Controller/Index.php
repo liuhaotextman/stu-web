@@ -1,6 +1,6 @@
 <?php
 
-namespace Snow\StuWeb\App\Controller;
+namespace App\Controller;
 
 class Index
 {
