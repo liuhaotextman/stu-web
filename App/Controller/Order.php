@@ -4,15 +4,15 @@ namespace App\Controller;
 
 use Snow\StuWeb\Contracts\Http\RequestInterface;
 use Snow\StuWeb\Support\Facades\Cache;
+use Snow\StuWeb\Support\Facades\Redis;
 
 class Order
 {
     public function index(RequestInterface $request)
     {
-        Cache::set('test', 1, 2);
-//        echo "<br/>";
-        echo Cache::get('test');
-        return ['name' => 'liuhao', 'age' => 30];
+        $data = ['path' => 'order/create', 'data' => ['phone' => '15217055431']];
+        Redis::lPush('queue', json_encode($data));
+        return 'success';
     }
 
     public function save()

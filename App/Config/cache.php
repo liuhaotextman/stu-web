@@ -1,6 +1,6 @@
 <?php
 return [
-    'type' => 'file',
+    'type' => 'redis',
     'stores' => [
         'file' => [
             'expire' => 0,
