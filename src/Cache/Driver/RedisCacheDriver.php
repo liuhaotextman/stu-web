@@ -8,7 +8,7 @@ use Snow\StuWeb\Redis\RedisManager;
 class RedisCacheDriver implements CacheDriverInterface
 {
     /**
-     * @var \Redis
+     * @var RedisManager
      */
     protected $handler;
 
