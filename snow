@@ -4,7 +4,9 @@ use Snow\StuWeb\Http\App;
 ini_set('display_errors', true);
 error_reporting(E_ALL ^ E_NOTICE);
 
+define('BASE_PATH', __DIR__);
+
 require __DIR__ . '/vendor/autoload.php';
 $app = App::getInstance();
-$console = $app->make(\Snow\StuWeb\Console\Console::class);
+$console = $app->make(\Snow\StuWeb\Contracts\Console\ConsoleInterface::class);
 $console->run();

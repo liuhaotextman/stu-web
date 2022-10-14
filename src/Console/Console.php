@@ -2,9 +2,12 @@
 
 namespace Snow\StuWeb\Console;
 
+use Snow\StuWeb\Contracts\Console\ConsoleInterface;
+use Snow\StuWeb\Contracts\Console\InputInterface;
+use Snow\StuWeb\Exception\ConsoleException;
 use Snow\StuWeb\Http\App;
 
-class Console
+class Console implements ConsoleInterface
 {
     protected App $app;
 
@@ -15,9 +18,14 @@ class Console
 
     public function run()
     {
-        $input = new Input();
+        $input = $this->app->make(InputInterface::class);
         $command = $input->command();
-        $appPath = $this->app->getAppPath();
-        var_dump($appPath);
+        $className = 'App\Command\\' . ucfirst($command);
+        if (!class_exists($className)) {
+            throw new ConsoleException('command class not found');
+        }
+
+        $commandClass = new $className();
+        $commandClass->work($input);
     }
 }

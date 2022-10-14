@@ -44,6 +44,10 @@ class App extends Container
         $this->appPath = $appPath;
         $this->routePath = $appPath . DIRECTORY_SEPARATOR . 'Route';
         $this->configPath = $appPath . DIRECTORY_SEPARATOR . 'Config';
+        if (file_exists($this->appPath . DIRECTORY_SEPARATOR . 'provider.php')) {
+            $bind = require $this->appPath . DIRECTORY_SEPARATOR . 'provider.php';
+            $this->bind = array_merge($this->bind, $bind);
+        }
     }
 
     /**
@@ -51,10 +55,6 @@ class App extends Container
      */
     protected function initComponent()
     {
-        if (file_exists($this->appPath . DIRECTORY_SEPARATOR . 'provider.php')) {
-            $bind = require $this->appPath . DIRECTORY_SEPARATOR . 'provider.php';
-            $this->bind = array_merge($this->bind, $bind);
-        }
         $this->instance(App::class, $this);
         $this->route = $this->get(RouteInterface::class);
         $this->middleware = $this->get(MiddlewareManagerInterface::class);

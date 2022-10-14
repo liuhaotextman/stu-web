@@ -2,13 +2,13 @@
 
 namespace Snow\StuWeb\Console;
 
-class Input
+use Snow\StuWeb\Contracts\Console\InputInterface;
+
+class Input implements InputInterface
 {
-    protected $tokens;
+    protected string $command;
 
-    protected $command;
-
-    protected $path;
+    protected string $path;
 
     public function __construct($argv = null)
     {
@@ -16,18 +16,16 @@ class Input
             $argv = $_SERVER['argv'];
             array_shift($argv);
         }
-        $this->tokens = $argv;
-        $commands = explode(' ', $this->tokens);
-        $this->command = $commands[0] ?? '';
-        $this->path = $commands[1] ?? '';
+        $this->command = $argv[0] ?? '';
+        $this->path = $argv[1] ?? '';
     }
 
-    public function command()
+    public function command(): string
     {
         return $this->command;
     }
 
-    public function path()
+    public function path(): string
     {
         return $this->path;
     }
