@@ -1,5 +1,5 @@
 <?php
-namespace Search;
+namespace Snow\StuWeb\Search;
 
 //
 // Copyright (c) 2001-2016, Andrew Aksyonoff
