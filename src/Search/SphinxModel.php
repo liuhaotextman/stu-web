@@ -22,7 +22,7 @@ class SphinxModel
 
     private array $searchWeightFields = [];
 
-    protected function __construct($host = '192.168.5.60', $port = '9312')
+    protected function __construct($host = '127.0.0.1', $port = '9312')
     {
         $this->client = new SphinxClient();
         $this->client->SetServer ($host, $port);
